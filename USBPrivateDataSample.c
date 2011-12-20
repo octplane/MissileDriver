@@ -133,7 +133,7 @@ static int send_ctrl_msg(IOUSBDeviceInterface** dev, const UInt8 request,
         printf("Command failed\n");
         return -1;
     }
-    printf("Command succeeded: %d\n", req.wLenDone);
+    printf("Command succeeded: %lu\n", req.wLenDone);
     
     return req.wLenDone;
 }
