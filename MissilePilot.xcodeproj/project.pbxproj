@@ -27,8 +27,8 @@
 
 /* Begin PBXFileReference section */
 		026B4183144DC24400E57C0C /* missile.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = missile.py; sourceTree = "<group>"; };
-		02C5EE99147D4D5800761FB2 /* MissilePilot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MissilePilot.c; path = ../../../github/MissilePilot.c; sourceTree = "<group>"; };
-		02C5EE9A147D4D5800761FB2 /* MissilePilot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissilePilot.h; path = ../../../github/MissilePilot.h; sourceTree = "<group>"; };
+		02C5EE99147D4D5800761FB2 /* MissilePilot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MissilePilot.c; sourceTree = "<group>"; };
+		02C5EE9A147D4D5800761FB2 /* MissilePilot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissilePilot.h; sourceTree = "<group>"; };
 		09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		8DD76F7E0486A8DE00D96B5E /* MissilePilot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MissilePilot; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA5B0100AD59C03002AC276 /* USBPrivateDataSample.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = USBPrivateDataSample.c; sourceTree = "<group>"; };
