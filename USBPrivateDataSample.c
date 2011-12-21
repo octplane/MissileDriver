@@ -60,6 +60,7 @@
 #include <IOKit/IOCFPlugIn.h>
 #include <IOKit/usb/IOUSBLib.h>
 #include <IOKit/IOKitLib.h>
+#include <unistd.h>
 
 // Change these two constants to match your device's idVendor and idProduct.
 // Or, just pass your idVendor and idProduct as command line arguments when running this sample.
@@ -114,14 +115,14 @@ void DeviceNotification(void *refCon, io_service_t service, natural_t messageTyp
 
 
 static int send_ctrl_msg(IOUSBDeviceInterface** dev, const UInt8 request,
-                         const UInt16 value, const UInt16 index, char * data)
+                         const UInt16 value, const UInt16 index, char * data, UInt16 length)
 {
     IOUSBDevRequest req;
-    req.bmRequestType = 0x21; //USBmakebmRequestType(kUSBIn, kUSBVendor, kUSBDevice);
+    req.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); //USBmakebmRequestType(kUSBIn, kUSBVendor, kUSBDevice);
     req.bRequest = request;
     req.wValue = value;
     req.wIndex = index;
-    req.wLength = 0;
+    req.wLength = length;
     req.pData = data;
     req.wLenDone = 0;
     
@@ -227,19 +228,23 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 
         privateDataRef->locationID = locationID;
         
-        char * inita = "\x55\x53\x42\x43\x0\x0\x4\x0";
-        char * initb = "\x55\x53\x42\x43\x0\x40\x2\x0";
+        // http://dgwilson.wordpress.com/windows-missile-launcher/
+//        char * inita = "\x55\x53\x42\x43\x0\x0\x4\x0";
+        char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
+        char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
         char * fill  = "\0x8\0x8\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0";
-        char * left = "\0x0\0x1\0x0\0x0\0x0\0x0";
+        char left[6] = { 0, 0, 0, 0, 0, 1 };
 
 
         char * big = malloc(64);
-        memcpy(big, left, 6);
+        UInt16 size = sizeof(left) + 58;
+        memcpy(big, left, sizeof(left));
         memcpy(big + 6, fill, 58);
         
-        send_ctrl_msg(&(*privateDataRef->deviceInterface), 0x09, 0x02, 0x01, inita);
-        send_ctrl_msg(&(*privateDataRef->deviceInterface), 0x09, 0x02, 0x01, initb);
-        send_ctrl_msg(&(*privateDataRef->deviceInterface), 0x09, 0x02, 0x01, big);
+        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, inita, sizeof(inita));
+        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, initb, sizeof(initb));
+        sleep(1);
+        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, big, size);
         
         
 //        self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
