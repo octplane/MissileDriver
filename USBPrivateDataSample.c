@@ -231,7 +231,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         privateDataRef->locationID = locationID;
         
         // http://dgwilson.wordpress.com/windows-missile-launcher/
-//        char * inita = "\x55\x53\x42\x43\x0\x0\x4\x0";
+        // http://www.lukecole.name/research_and_projects/personal/usb_missile_launcher/
         char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
         char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
         char command[8] = { 0, 0, 0, 1, 0, 0, 8, 8 };
@@ -244,12 +244,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, initb, sizeof(initb));
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x00, fullCommand, FULL_COMMAND_SIZE);
         
-        
-//        self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
-//        self.dev.handle.controlMsg(0x21, 0x09, self.INITB, 0x02, 0x01)
-//        self.dev.handle.controlMsg(0x21, 0x09, direction+self.CMDFILL, 0x02, 0x01)
-        
-                                  
         // Register for an interest notification of this device being removed. Use a reference to our
         // private data as the refCon which will be passed to the notification callback.
         kr = IOServiceAddInterestNotification(gNotifyPort,						// notifyPort
