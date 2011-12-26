@@ -234,7 +234,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 //        char * inita = "\x55\x53\x42\x43\x0\x0\x4\x0";
         char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
         char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
-        char command[8] = { 0, 0, 0, 0, 0, 1, 8, 8 };
+        char command[8] = { 0, 0, 0, 1, 0, 0, 8, 8 };
 
 
         char * fullCommand = calloc(FULL_COMMAND_SIZE, 1);
@@ -242,8 +242,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, inita, sizeof(inita));
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, initb, sizeof(initb));
-        sleep(1);
-        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, fullCommand, FULL_COMMAND_SIZE);
+        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x00, fullCommand, FULL_COMMAND_SIZE);
         
         
 //        self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
@@ -267,7 +266,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         
         // Done with this USB device; release the reference added by IOIteratorNext
         kr = IOObjectRelease(usbDevice);
-        free(command);
+        free(fullCommand);
     }
 }
 
