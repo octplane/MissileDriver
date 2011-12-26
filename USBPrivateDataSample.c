@@ -78,6 +78,8 @@ static IONotificationPortRef	gNotifyPort;
 static io_iterator_t			gAddedIter;
 static CFRunLoopRef				gRunLoop;
 
+#define FULL_COMMAND_SIZE  64
+
 //================================================================================================
 //
 //	DeviceNotification
@@ -232,19 +234,16 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 //        char * inita = "\x55\x53\x42\x43\x0\x0\x4\x0";
         char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
         char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
-        char * fill  = "\0x8\0x8\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0\0x0";
-        char left[6] = { 0, 0, 0, 0, 0, 1 };
+        char command[8] = { 0, 0, 0, 0, 0, 1, 8, 8 };
 
 
-        char * big = malloc(64);
-        UInt16 size = sizeof(left) + 58;
-        memcpy(big, left, sizeof(left));
-        memcpy(big + 6, fill, 58);
+        char * fullCommand = calloc(FULL_COMMAND_SIZE, 1);
+        memcpy(fullCommand, command, sizeof(command));
         
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, inita, sizeof(inita));
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, initb, sizeof(initb));
         sleep(1);
-        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, big, size);
+        send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, fullCommand, FULL_COMMAND_SIZE);
         
         
 //        self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
@@ -268,6 +267,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         
         // Done with this USB device; release the reference added by IOIteratorNext
         kr = IOObjectRelease(usbDevice);
+        free(command);
     }
 }
 
