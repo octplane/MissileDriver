@@ -1,227 +1,541 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		02C5EE9B147D4D5800761FB2 /* MissilePilot.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C5EE99147D4D5800761FB2 /* MissilePilot.m */; };
-		8DD76F790486A8DE00D96B5E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */; };
-		BBA5B0110AD59C03002AC276 /* USBPrivateDataSample.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA5B0100AD59C03002AC276 /* USBPrivateDataSample.m */; };
-		BBA5B03E0AD59C29002AC276 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5B03D0AD59C29002AC276 /* IOKit.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8DD76F7B0486A8DE00D96B5E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		026B4183144DC24400E57C0C /* missile.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = missile.py; sourceTree = "<group>"; };
-		02C5EE99147D4D5800761FB2 /* MissilePilot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissilePilot.m; sourceTree = "<group>"; };
-		02C5EE9A147D4D5800761FB2 /* MissilePilot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissilePilot.h; sourceTree = "<group>"; };
-		09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		8DD76F7E0486A8DE00D96B5E /* MissilePilot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MissilePilot; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBA5B0100AD59C03002AC276 /* USBPrivateDataSample.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = USBPrivateDataSample.m; sourceTree = "<group>"; };
-		BBA5B03D0AD59C29002AC276 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		8DD76F780486A8DE00D96B5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8DD76F790486A8DE00D96B5E /* CoreFoundation.framework in Frameworks */,
-				BBA5B03E0AD59C29002AC276 /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		08FB7794FE84155DC02AAC07 /* USBPrivateDataSample */ = {
-			isa = PBXGroup;
-			children = (
-				08FB7795FE84155DC02AAC07 /* Source */,
-				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
-				19C28FBDFE9D53C911CA2CBB /* Products */,
-			);
-			name = USBPrivateDataSample;
-			sourceTree = "<group>";
-		};
-		08FB7795FE84155DC02AAC07 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				026B4183144DC24400E57C0C /* missile.py */,
-				BBA5B0100AD59C03002AC276 /* USBPrivateDataSample.m */,
-				02C5EE99147D4D5800761FB2 /* MissilePilot.m */,
-				02C5EE9A147D4D5800761FB2 /* MissilePilot.h */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
-		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */,
-				BBA5B03D0AD59C29002AC276 /* IOKit.framework */,
-			);
-			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		19C28FBDFE9D53C911CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8DD76F7E0486A8DE00D96B5E /* MissilePilot */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		8DD76F740486A8DE00D96B5E /* USBPrivateDataSample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB924708733DCA0010E9CD /* Build configuration list for PBXNativeTarget "USBPrivateDataSample" */;
-			buildPhases = (
-				8DD76F760486A8DE00D96B5E /* Sources */,
-				8DD76F780486A8DE00D96B5E /* Frameworks */,
-				8DD76F7B0486A8DE00D96B5E /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = USBPrivateDataSample;
-			productInstallPath = "$(HOME)/bin";
-			productName = USBPrivateDataSample;
-			productReference = 8DD76F7E0486A8DE00D96B5E /* MissilePilot */;
-			productType = "com.apple.product-type.tool";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		08FB7793FE84155DC02AAC07 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0420;
-			};
-			buildConfigurationList = 1DEB924B08733DCA0010E9CD /* Build configuration list for PBXProject "MissilePilot" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 1;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 08FB7794FE84155DC02AAC07 /* USBPrivateDataSample */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				8DD76F740486A8DE00D96B5E /* USBPrivateDataSample */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		8DD76F760486A8DE00D96B5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BBA5B0110AD59C03002AC276 /* USBPrivateDataSample.m in Sources */,
-				02C5EE9B147D4D5800761FB2 /* MissilePilot.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		1DEB924808733DCA0010E9CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INSTALL_PATH = "$(HOME)/bin";
-				PRODUCT_NAME = MissilePilot;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.6u.sdk;
-				WARNING_CFLAGS = "-Wall";
-				ZERO_LINK = NO;
-			};
-			name = Debug;
-		};
-		1DEB924908733DCA0010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = "$(HOME)/bin";
-				PRODUCT_NAME = MissilePilot;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.6u.sdk;
-				WARNING_CFLAGS = "-Wall";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		1DEB924C08733DCA0010E9CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_VERSION_i386 = "";
-				GCC_VERSION_ppc = 3.3;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
-			};
-			name = Debug;
-		};
-		1DEB924D08733DCA0010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_VERSION_i386 = "";
-				GCC_VERSION_ppc = 3.3;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		1DEB924708733DCA0010E9CD /* Build configuration list for PBXNativeTarget "USBPrivateDataSample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1DEB924808733DCA0010E9CD /* Debug */,
-				1DEB924908733DCA0010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1DEB924B08733DCA0010E9CD /* Build configuration list for PBXProject "MissilePilot" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1DEB924C08733DCA0010E9CD /* Debug */,
-				1DEB924D08733DCA0010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>026B4183144DC24400E57C0C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.python</string>
+			<key>path</key>
+			<string>missile.py</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>02C5EE99147D4D5800761FB2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MissilePilot.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>02C5EE9A147D4D5800761FB2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MissilePilot.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>02C5EE9B147D4D5800761FB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>02C5EE99147D4D5800761FB2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>08FB7793FE84155DC02AAC07</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0420</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>1DEB924B08733DCA0010E9CD</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>08FB7794FE84155DC02AAC07</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>8DD76F740486A8DE00D96B5E</string>
+			</array>
+		</dict>
+		<key>08FB7794FE84155DC02AAC07</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>08FB7795FE84155DC02AAC07</string>
+				<string>08FB779DFE84155DC02AAC07</string>
+				<string>19C28FBDFE9D53C911CA2CBB</string>
+				<string>C74B1346B6BE408DB88DEDF5</string>
+				<string>1B8A0024492247DBB516D66D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>USBPrivateDataSample</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>08FB7795FE84155DC02AAC07</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>026B4183144DC24400E57C0C</string>
+				<string>BBA5B0100AD59C03002AC276</string>
+				<string>02C5EE99147D4D5800761FB2</string>
+				<string>02C5EE9A147D4D5800761FB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Source</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>08FB779DFE84155DC02AAC07</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>09AB6884FE841BABC02AAC07</string>
+				<string>BBA5B03D0AD59C29002AC276</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>External Frameworks and Libraries</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>09AB6884FE841BABC02AAC07</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreFoundation.framework</string>
+			<key>path</key>
+			<string>/System/Library/Frameworks/CoreFoundation.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;absolute&gt;</string>
+		</dict>
+		<key>10C579C0FD08403A9AAE3605</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>19C28FBDFE9D53C911CA2CBB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8DD76F7E0486A8DE00D96B5E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1B8A0024492247DBB516D66D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF33BF575E6D4DD1911E4E5A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1DEB924708733DCA0010E9CD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1DEB924808733DCA0010E9CD</string>
+				<string>1DEB924908733DCA0010E9CD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>1DEB924808733DCA0010E9CD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C74B1346B6BE408DB88DEDF5</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_MODEL_TUNING</key>
+				<string>G5</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(HOME)/bin</string>
+				<key>PRODUCT_NAME</key>
+				<string>MissilePilot</string>
+				<key>SDKROOT_i386</key>
+				<string>/Developer/SDKs/MacOSX10.6u.sdk</string>
+				<key>WARNING_CFLAGS</key>
+				<string>-Wall</string>
+				<key>ZERO_LINK</key>
+				<string>NO</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1DEB924908733DCA0010E9CD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C74B1346B6BE408DB88DEDF5</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>GCC_GENERATE_DEBUGGING_SYMBOLS</key>
+				<string>NO</string>
+				<key>GCC_MODEL_TUNING</key>
+				<string>G5</string>
+				<key>INSTALL_PATH</key>
+				<string>$(HOME)/bin</string>
+				<key>PRODUCT_NAME</key>
+				<string>MissilePilot</string>
+				<key>SDKROOT_i386</key>
+				<string>/Developer/SDKs/MacOSX10.6u.sdk</string>
+				<key>WARNING_CFLAGS</key>
+				<string>-Wall</string>
+				<key>ZERO_LINK</key>
+				<string>NO</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>1DEB924B08733DCA0010E9CD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1DEB924C08733DCA0010E9CD</string>
+				<string>1DEB924D08733DCA0010E9CD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>1DEB924C08733DCA0010E9CD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>GCC_VERSION_i386</key>
+				<string></string>
+				<key>GCC_VERSION_ppc</key>
+				<string>3.3</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET_i386</key>
+				<string>10.4</string>
+				<key>MACOSX_DEPLOYMENT_TARGET_ppc</key>
+				<string>10.2</string>
+				<key>SDKROOT_i386</key>
+				<string>/Developer/SDKs/MacOSX10.4u.sdk</string>
+				<key>SDKROOT_ppc</key>
+				<string>/Developer/SDKs/MacOSX10.2.8.sdk</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1DEB924D08733DCA0010E9CD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>GCC_VERSION_i386</key>
+				<string></string>
+				<key>GCC_VERSION_ppc</key>
+				<string>3.3</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET_i386</key>
+				<string>10.4</string>
+				<key>MACOSX_DEPLOYMENT_TARGET_ppc</key>
+				<string>10.2</string>
+				<key>SDKROOT_i386</key>
+				<string>/Developer/SDKs/MacOSX10.4u.sdk</string>
+				<key>SDKROOT_ppc</key>
+				<string>/Developer/SDKs/MacOSX10.2.8.sdk</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>2512DF17719D4A549CAA7B2C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>8DD76F740486A8DE00D96B5E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>1DEB924708733DCA0010E9CD</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2512DF17719D4A549CAA7B2C</string>
+				<string>8DD76F760486A8DE00D96B5E</string>
+				<string>8DD76F780486A8DE00D96B5E</string>
+				<string>8DD76F7B0486A8DE00D96B5E</string>
+				<string>10C579C0FD08403A9AAE3605</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>USBPrivateDataSample</string>
+			<key>productInstallPath</key>
+			<string>$(HOME)/bin</string>
+			<key>productName</key>
+			<string>USBPrivateDataSample</string>
+			<key>productReference</key>
+			<string>8DD76F7E0486A8DE00D96B5E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.tool</string>
+		</dict>
+		<key>8DD76F760486A8DE00D96B5E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BBA5B0110AD59C03002AC276</string>
+				<string>02C5EE9B147D4D5800761FB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8DD76F780486A8DE00D96B5E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8DD76F790486A8DE00D96B5E</string>
+				<string>BBA5B03E0AD59C29002AC276</string>
+				<string>C9C5ABF2A2CA4076B04D3F0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8DD76F790486A8DE00D96B5E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>09AB6884FE841BABC02AAC07</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8DD76F7B0486A8DE00D96B5E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>8</string>
+			<key>dstPath</key>
+			<string>/usr/share/man/man1/</string>
+			<key>dstSubfolderSpec</key>
+			<string>0</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>1</string>
+		</dict>
+		<key>8DD76F7E0486A8DE00D96B5E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>compiled.mach-o.executable</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>MissilePilot</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BBA5B0100AD59C03002AC276</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>30</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>USBPrivateDataSample.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BBA5B0110AD59C03002AC276</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BBA5B0100AD59C03002AC276</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BBA5B03D0AD59C29002AC276</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>IOKit.framework</string>
+			<key>path</key>
+			<string>/System/Library/Frameworks/IOKit.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;absolute&gt;</string>
+		</dict>
+		<key>BBA5B03E0AD59C29002AC276</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BBA5B03D0AD59C29002AC276</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C74B1346B6BE408DB88DEDF5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9C5ABF2A2CA4076B04D3F0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF33BF575E6D4DD1911E4E5A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF33BF575E6D4DD1911E4E5A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>08FB7793FE84155DC02AAC07</string>
+</dict>
+</plist>
