@@ -140,7 +140,7 @@ static int send_ctrl_msg(IOUSBDeviceInterface** dev, const UInt8 request,
     
     if(rc != kIOReturnSuccess)
     {
-        printf("Command failed\n");
+        printf("Command failed %d 0x%X\n", rc, rc);
         return -1;
     }
     printf("Command succeeded: %u\n", (unsigned int)req.wLenDone);
