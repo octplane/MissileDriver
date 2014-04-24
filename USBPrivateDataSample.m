@@ -78,7 +78,12 @@ static IONotificationPortRef	gNotifyPort;
 static io_iterator_t			gAddedIter;
 static CFRunLoopRef				gRunLoop;
 
-#define FULL_COMMAND_SIZE  64
+#define COMMAND_TYPE                UInt64
+#define FULL_COMMAND_SIZE           64
+#define MISSILE_LAUNCH_COMMAND      0x8080100000000000
+#define LEFT_COMMAND                0x8080000000000100
+#define RIGHT_COMMAND               0x8080000000010000
+
 
 //================================================================================================
 //
@@ -234,11 +239,10 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         // http://www.lukecole.name/research_and_projects/personal/usb_missile_launcher/
         char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
         char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
-        char command[8] = { 0, 0, 0, 1, 0, 0, 8, 8 };
-
+        COMMAND_TYPE command = LEFT_COMMAND;
 
         char * fullCommand = calloc(FULL_COMMAND_SIZE, 1);
-        memcpy(fullCommand, command, sizeof(command));
+        memcpy(fullCommand, &command, sizeof(command));
         
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, inita, sizeof(inita));
         send_ctrl_msg(&(*privateDataRef->deviceInterface), kUSBRqSetConfig, kUSBConfDesc, 0x01, initb, sizeof(initb));
