@@ -92,8 +92,8 @@ from time import sleep, time
 from socket import *
 
 class MissileDevice:
-  INITA     = (85, 83, 66, 67,  0,  0,  4,  0) 0x55 0x53 0x42 0x43
-  INITB     = (85, 83, 66, 67,  0, 64,  2,  0)                        0x40
+  INITA     = (85, 83, 66, 67,  0,  0,  4,  0)
+  INITB     = (85, 83, 66, 67,  0, 64,  2,  0)
   CMDFILL   = ( 8,  8,
                 0,  0,  0,  0,  0,  0,  0,  0,
                 0,  0,  0,  0,  0,  0,  0,  0,
@@ -121,21 +121,21 @@ class MissileDevice:
     except NoMissilesError, e:
       raise NoMissilesError()
 
-controlMsg(...)
-| controlMsg(requestType, request, buffer, value=0, index=0, timeout=100) -> bytesWritten|buffer
-| 
-| Performs a control request to the default control pipe on a device.
-| Arguments:
-| requestType: specifies the direction of data flow, the type
-| of request, and the recipient.
-| request: specifies the request.
-| buffer: if the transfer is a write transfer, buffer is a sequence 
-| with the transfer data, otherwise, buffer is the number of
-| bytes to read.
-| value: specific information to pass to the device. (default: 0)
-| index: specific information to pass to the device. (default: 0)
-| timeout: operation timeout in miliseconds. (default: 100)
-| Returns the number of bytes written.
+#controlMsg(...)
+#| controlMsg(requestType, request, buffer, value=0, index=0, timeout=100) -> bytesWritten|buffer
+#|
+#| Performs a control request to the default control pipe on a device.
+#| Arguments:
+#| requestType: specifies the direction of data flow, the type
+#| of request, and the recipient.
+#| request: specifies the request.
+#| buffer: if the transfer is a write transfer, buffer is a sequence
+#| with the transfer data, otherwise, buffer is the number of
+#| bytes to read.
+#| value: specific information to pass to the device. (default: 0)
+#| index: specific information to pass to the device. (default: 0)
+#| timeout: operation timeout in miliseconds. (default: 100)
+#| Returns the number of bytes written.
     
   def move(self, direction):
     self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
