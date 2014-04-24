@@ -83,6 +83,8 @@ static CFRunLoopRef				gRunLoop;
 #define MISSILE_LAUNCH_COMMAND      0x8080100000000000
 #define LEFT_COMMAND                0x8080000000000100
 #define RIGHT_COMMAND               0x8080000000010000
+#define UP_COMMAND                  0x8080000001000000
+#define DOWN_COMMAND                0x8080000100000000
 
 
 //================================================================================================
@@ -239,7 +241,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         // http://www.lukecole.name/research_and_projects/personal/usb_missile_launcher/
         char inita[8] = { 'U', 'S', 'B', 'C',  0,  0,  4,  0 };
         char initb[8] = { 'U', 'S', 'B', 'C',  0, 64,  2,  0 };
-        COMMAND_TYPE command = LEFT_COMMAND;
+        COMMAND_TYPE command = UP_COMMAND;
 
         char * fullCommand = calloc(FULL_COMMAND_SIZE, 1);
         memcpy(fullCommand, &command, sizeof(command));
