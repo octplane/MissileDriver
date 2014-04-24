@@ -153,7 +153,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = "$(HOME)/bin";
 				PRODUCT_NAME = MissilePilot;
-				SDKROOT = macosx;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.6u.sdk;
 				WARNING_CFLAGS = "-Wall";
 				ZERO_LINK = NO;
@@ -163,15 +162,10 @@
 		1DEB924908733DCA0010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = "$(HOME)/bin";
 				PRODUCT_NAME = MissilePilot;
-				SDKROOT = macosx;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.6u.sdk;
 				WARNING_CFLAGS = "-Wall";
 				ZERO_LINK = NO;
@@ -181,10 +175,6 @@
 		1DEB924C08733DCA0010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_VERSION_i386 = "";
 				GCC_VERSION_ppc = 3.3;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -199,10 +189,6 @@
 		1DEB924D08733DCA0010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_VERSION_i386 = "";
 				GCC_VERSION_ppc = 3.3;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
